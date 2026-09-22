@@ -12,12 +12,8 @@ jobs:
       - name: Get Calculator Files
         uses: actions/checkout@v4
 
-      - name: Check Calculator Files
+      - name: Test Calculator
         run: |
-          test -f wronggggggggggggg.html
-          test -f style.css
-          test -f script.js
-          echo "Calculator files found successfully!"
-
-      - name: Test Complete
-        run: echo "Calculator project test completed successfully"
+          echo "Testing Calculator..."
+          echo "This test will fail intentionally."
+          exit 1
