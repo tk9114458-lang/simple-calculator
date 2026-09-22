@@ -5,23 +5,45 @@ body {
 }
 
 .calculator {
-    width: 300px;
+    width: 320px;
     margin: 100px auto;
-    padding: 20px;
+    padding: 25px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
+}
+
+h1 {
+    color: darkblue;
 }
 
 input {
     width: 90%;
-    padding: 10px;
-    margin: 5px;
+    padding: 12px;
+    margin: 8px;
+    box-sizing: border-box;
 }
 
 button {
-    width: 50px;
     padding: 10px;
     margin: 5px;
-    font-size: 18px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: lightblue;
+}
+
+.result {
+    margin: 20px;
+    padding: 10px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+
+.result p {
+    font-size: 24px;
+    font-weight: bold;
 }
