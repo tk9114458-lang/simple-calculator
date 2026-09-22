@@ -7,27 +7,53 @@ function getNumbers() {
 
 function add() {
     let numbers = getNumbers();
-    document.getElementById("result").innerText = numbers[0] + numbers[1];
+    let result = numbers[0] + numbers[1];
+
+    showResult(result);
+    addHistory(numbers[0] + " + " + numbers[1] + " = " + result);
 }
 
 function subtract() {
     let numbers = getNumbers();
-    document.getElementById("result").innerText = numbers[0] - numbers[1];
+    let result = numbers[0] - numbers[1];
+
+    showResult(result);
+    addHistory(numbers[0] + " - " + numbers[1] + " = " + result);
 }
 
 function multiply() {
     let numbers = getNumbers();
-    document.getElementById("result").innerText = numbers[0] * numbers[1];
+    let result = numbers[0] * numbers[1];
+
+    showResult(result);
+    addHistory(numbers[0] + " × " + numbers[1] + " = " + result);
 }
 
 function divide() {
     let numbers = getNumbers();
 
     if (numbers[1] == 0) {
-        document.getElementById("result").innerText = "Cannot divide by 0";
-    } else {
-        document.getElementById("result").innerText = numbers[0] / numbers[1];
+        showResult("Cannot divide by 0");
+        return;
     }
+
+    let result = numbers[0] / numbers[1];
+
+    showResult(result);
+    addHistory(numbers[0] + " ÷ " + numbers[1] + " = " + result);
+}
+
+function showResult(result) {
+    document.getElementById("result").innerText = result;
+}
+
+function addHistory(calculation) {
+    let historyList = document.getElementById("historyList");
+
+    let item = document.createElement("li");
+    item.innerText = calculation;
+
+    historyList.appendChild(item);
 }
 
 function clearCalculator() {
