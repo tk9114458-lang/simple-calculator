@@ -1,0 +1,23 @@
+name: Calculator CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get Calculator Files
+        uses: actions/checkout@v4
+
+      - name: Check Calculator Files
+        run: |
+          test -f index.html
+          test -f style.css
+          test -f script.js
+          echo "Calculator files found successfully!"
+
+      - name: Test Complete
+        run: echo "Calculator project test completed successfully"
